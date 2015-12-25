@@ -13,19 +13,76 @@
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   
     <link rel="stylesheet" href="about.css" />
+    
+    <!-- スムーズスクロール部分の記述 -->
+<script>
+$(function(){
+   // #で始まるアンカーをクリックした場合に処理
+   $('a[href^=#]').click(function() {
+      // スクロールの速度
+      var speed = 400; // ミリ秒
+      // アンカーの値取得
+      var href= $(this).attr("href");
+      // 移動先を取得
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      // 移動先を数値で取得
+      var position = target.offset().top;
+      // スムーススクロール
+      $('body,html').animate({scrollTop:position}, speed, 'swing');
+      return false;
+   });
+});
+
+$(function () {
+  var headerHight = 70; //ヘッダの高さ
+  $('a[href^=#]').click(function(){
+    var href= $(this).attr("href");
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    var position = target.offset().top-headerHight; //ヘッダの高さ分位置をずらす
+    $("html, body").animate({scrollTop:position}, 550, "swing");
+    return false;
+  });
+});
+
+</script>
+
+
+
   
   </head>
   
   
   <body>
+    
+
+    
+<nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed"data-toggle="collapse"data-target="#navbarEexample8">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#logo">
+			  <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+				わたしのポートフォリオ。
+			</a>
+		</div>
+		
+		<div class="collapse navbar-collapse" id="navbarEexample8">
+			<ul class="nav navbar-nav">
+				<li><a href="#works">Works</a></li>
+				<li><a href="#links">Links</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+			<!--<p class="navbar-text navbar-right">ようこそ <a href="#" class="navbar-link">ゲスト</a> さん。</p>!-->
+		</div>
+	</div>
+</nav> 
+    
     <header>
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">Me</a></li>
-          <li><a href="contact.html">Works</a></li>
-        </ul>
-      </nav>
       <div id="logo">
         <img src="profile.jpg" alt="" />
         <h1>かはのたかし</h1>
@@ -39,8 +96,7 @@
         <p>どうぞよろしくお願いいたします。</p>
         <br />
         
-        
-        <h4><strong>Works</strong></h4>
+        <h4 id="works" class="dist"><strong>Works</strong></h4>
         
         <div class="panel panel-success">
         	<div class="panel-heading">
@@ -97,8 +153,28 @@
         </div>
 
         
-        <h4><strong>Links</strong></h4>        
+        <h4 id="links" class="dist"><strong>Links</strong></h4>        
         <a href="https://github.com/minamo4648">GitHubユーザページ</a> 
+        <br /><br />
+        
+<h4 id="contact"><strong>Contact</strong></h4>          
+  <form class="form-inline">
+    <div class="form-group">
+      <label for="exampleInputName">Name</label>
+      <input type="text" class="form-control" id="exampleInputName">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail2">Email</label>
+      <input type="email" class="form-control" id="exampleInputEmail" placeholder="xxx@example.com">
+    </div>
+  <div class="form-group">
+    <label for="exampleMessage">Message</label>
+    <input type="text" class="form-control" id="exampleMessage" style="width:600px;" placeholder="まだボタンを押しても送れません">
+  </div><br />
+    <button type="submit" class="btn btn-success">Send</button>
+  </form>
+        
+        
       </section>
       <footer>
         <p>&copy; 2015 KAWANO Takashi.</p>

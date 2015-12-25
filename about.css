@@ -4,14 +4,27 @@
 }
 
 body {
+  padding-top: 60px;
   font-family: YuGothic, "游ゴシック", "メイリオ", Meiryo, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", sans-serif;
   background-color: rgba(214,233,202,255);
   font-size: 14px;
 }
 
-span.red {
-  color: red;
+/* header */
+.navbar {
+  min-height: 40px !important
 }
+
+.navbar-brand {
+  height: 30px;
+  padding: 10px 15px;
+}
+
+.navbar-nav > li > a {
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+}
+
 
 p {
   line-height: 100%;
@@ -20,6 +33,11 @@ p {
 h4 {
   line-height: 180%;
 }
+
+a:link { color: #2f5d50; }
+a:visited { color: #727171; }
+a:hover { color: #2f5d50; }
+a:active { color: #007b43; }
 
 header {
   background-image: url("bg.jpg");
@@ -87,13 +105,12 @@ img.inpanel {
  margin-right: auto;
 }
 
-panel-footer {
-  font-size: 8px;
+.panel-footer {
+  font-size: 12px;
 }
 
-panel-footer ul li{
-  
-  color: #999;
+.panel-footer ul li{
+
   margin-left: 20px;
   
 }
@@ -106,6 +123,12 @@ section h2 {
   padding: 10px 0 20px 0;
   text-align: center;
   letter-spacing: 0.15em;
+}
+
+.form-group{
+  
+  padding: 10px
+  
 }
 
 footer {

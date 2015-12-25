@@ -46,15 +46,10 @@ $(function () {
 
 </script>
 
-
-
-  
   </head>
   
   
   <body>
-    
-
     
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid">
@@ -73,12 +68,20 @@ $(function () {
 		
 		<div class="collapse navbar-collapse" id="navbarEexample8">
 			<ul class="nav navbar-nav">
-				<li><a href="#works">Works</a></li>
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button">Works</a>
+					<ul class="dropdown-menu" role="menu">
+						<li><a href="#mb">Message Board</a></li>
+						<li><a href="#cs">Twitter Clone</a></li>
+						<li><a href="#ml">Mono List</a></li>
+						<li><a href="#kk">KAKAI</a></li>
+					</ul>
+				</li>
 				<li><a href="#links">Links</a></li>
 				<li><a href="#contact">Contact</a></li>
 			</ul>
 			<!--<p class="navbar-text navbar-right">ようこそ <a href="#" class="navbar-link">ゲスト</a> さん。</p>!-->
 		</div>
+		
 	</div>
 </nav> 
     
@@ -98,7 +101,7 @@ $(function () {
         
         <h4 id="works" class="dist"><strong>Works</strong></h4>
         
-        <div class="panel panel-success">
+        <div id="mb" class="panel panel-success">
         	<div class="panel-heading">
         		メッセージボード
         	</div>
@@ -110,7 +113,7 @@ $(function () {
         	</div>
         </div>
 
-        <div class="panel panel-success">
+        <div id="cs" class="panel panel-success">
         	<div class="panel-heading">
         		Twitterクローンサイト
         	</div>
@@ -127,7 +130,7 @@ $(function () {
         	</div>
         </div>
 
-        <div class="panel panel-success">
+        <div id="ml" class="panel panel-success">
         	<div class="panel-heading">
         		モノリスト
         	</div>
@@ -140,7 +143,7 @@ $(function () {
         	</div>
         </div>
 
-        <div class="panel panel-success">
+        <div id="kk" class="panel panel-success">
         	<div class="panel-heading">
         		KAKAI
         	</div>
